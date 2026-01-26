@@ -31,7 +31,7 @@
     },
     "external_website": {
       "type": "website",
-      "path": "https://www.revisit.dev",
+      "path": "https://mgc-frontend.vercel.app/",
       "response": [],
       "previousButton": true,
       "recordAudio": true,
@@ -39,7 +39,7 @@
     },
     "external_website2": {
       "type": "website",
-      "path": "https://www.revisit.dev",
+      "path": "https://mgc-frontend.vercel.app/",
       "response": [],
       "previousButton": true,
       "recordAudio": true,
