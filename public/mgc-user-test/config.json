@@ -1,0 +1,201 @@
+{
+  "$schema": "https://raw.githubusercontent.com/revisit-studies/study/v2.3.2/src/parser/StudyConfigSchema.json",
+  "studyMetadata": {
+    "title": "Mapping Global China Website User Test",
+    "version": "pilot",
+    "authors": ["MGC Team Croissant"],
+    "date": "2026-02-01",
+    "description": "Last Updated: 2026-02-02",
+    "organizations": ["Mapping Global China", "WPI"]
+  },
+  "uiConfig": {
+    "contactEmail": "contact@revisit.dev",
+    "helpTextPath": "mgc-user-test/assets/help.md",
+    "logoPath": "revisitAssets/revisitLogoSquare.svg",
+    "withProgressBar": true,
+    "autoDownloadStudy": false,
+    "withSidebar": false,
+    "windowEventDebounceTime": 200,
+    "recordAudio": true,
+    "recordScreen": true,
+    "recordScreenFPS": 30,
+    "studyEndMsg": "Thank you for completing the study!\n\nHere is a link to our study if you would like to redo the study or share it with a peer:\n\n{Website}\n\nYou may now close the page."
+  },
+  "importedLibraries": [
+    "screen-recording"
+  ],
+  "components": {
+    "introduction-mgc": {
+      "type": "markdown",
+      "path": "mgc-user-test/assets/introduction-mgc.md",
+      "response": []
+    },
+    "introduction-study": {
+      "type": "markdown",
+      "path": "mgc-user-test/assets/introduction-study.md",
+      "response": [],
+      "previousButton": true
+    },
+    "consent": {
+      "type": "markdown",
+      "path": "mgc-user-test/assets/consent.md",
+      "response": [
+        {
+          "id": "consent-response",
+          "prompt": "Sign your name below after you have read and understood the above points:",
+          "type": "shortText"
+        },
+        {
+          "id": "age-response",
+          "prompt": "All participants of this study must be over the age of 18. By checking the box below, you acknowledge that you are over the age of 18.",
+          "type": "shortText",
+          "placeholder": "Checkbox"
+        }
+      ],
+      "previousButton": true
+    },
+    "training": {
+      "type": "markdown",
+      "path": "mgc-user-test/assets/training.md",
+      "response": [
+        {
+          "id": "training-response",
+          "prompt": "Have you verbalized your thoughts?",
+          "location": "belowStimulus",
+          "type": "shortText"
+        }
+      ]
+    },
+    "task1-navigation": {
+      "type": "website",
+      "instruction": "Navigate to the Master Map",
+      "instructionLocation": "aboveStimulus",
+      "path": "https://test.mapglobalchina.com/",
+      "response": [],
+      "previousButton": false,
+      "recordAudio": true,
+      "recordScreen": true
+    },
+    "task2-about": {
+      "type": "website",
+      "instruction": "Find the Relevant Information About the Team",
+      "withSidebar": true,
+      "nextButtonLocation": "sidebar",
+      "path": "https://test.mapglobalchina.com/",
+      "response": [
+        {
+          "id": "about-response",
+          "prompt": "Where does Maria Adele Carrai work?",
+          "location": "sidebar",
+          "type": "shortText"
+        }
+      ],
+      "previousButton": true,
+      "recordAudio": true,
+      "recordScreen": true
+    },
+    "task3-mapping": {
+      "type": "website",
+      "instruction": "Explore the Features of the Map and Verbalize any Thoughts You Have",
+      "instructionLocation": "aboveStimulus",
+      "path": "https://test.mapglobalchina.com/maps/energy",
+      "response": [],
+      "previousButton": true,
+      "recordAudio": true,
+      "recordScreen": true
+    },
+    "task4-building": {
+      "type": "website",
+      "instruction": "Create a Map for at Least 3 Countries in 2 Different Sectors",
+      "instructionLocation": "aboveStimulus",
+      "path": "https://test.mapglobalchina.com/beta/build-your-map",
+      "response": [],
+      "previousButton": true,
+      "recordAudio": true,
+      "recordScreen": true
+    },
+    "task5-research": {
+      "type": "website",
+      "instruction": "Explore the Research Page",
+      "instructionLocation": "aboveStimulus",
+      "path": "https://test.mapglobalchina.com/research",
+      "response": [],
+      "previousButton": true,
+      "recordAudio": true,
+      "recordScreen": true
+    },
+    "task6-comparison": {
+      "type": "image",
+      "instruction": "Choose Your Preferences",
+      "withSidebar": true,
+      "nextButtonLocation": "sidebar",
+      "path": "mgc-user-test/assets/pages.png",
+      "response": [
+        {
+          "id": "mode-response",
+          "prompt": "Do you prefer light or dark mode?",
+          "location": "sidebar",
+          "type": "shortText"
+        },
+        {
+          "id": "map-response",
+          "prompt": "Which of the maps (1-3, top to bottom) do you like the most?",
+          "type": "numerical",
+          "location": "sidebar",
+          "min": 1,
+          "max": 3
+        }
+      ],
+      "previousButton": true,
+      "recordAudio": true,
+      "recordScreen": true
+    },
+    "sharing": {
+      "type": "markdown",
+      "path": "mgc-user-test/assets/sharing.md",
+      "response": [
+        {
+          "id": "sharing-response",
+          "prompt": "",
+          "type": "shortText"
+        }
+      ]
+    },
+    "feedback": {
+      "type": "markdown",
+      "path": "mgc-user-test/assets/feedback.md",
+      "response": [
+        {
+          "id": "questions-response",
+          "prompt": "Are there any questions, comments, or concerns that you may still have about the Mapping Global China website?",
+          "type": "shortText",
+          "required": false
+        },
+        {
+          "id": "thoughts-response",
+          "prompt": "Please share any thoughts about the study below:",
+          "type": "shortText",
+          "required": false
+        }
+      ]
+    }
+  },
+  "sequence": {
+    "order": "fixed",
+    "components": [
+      "introduction-mgc",
+      "introduction-study",
+      "consent",
+      "$screen-recording.co.screenRecordingPermission",
+      "training",
+      "task1-navigation",
+      "task2-about",
+      "task3-mapping",
+      "task4-building",
+      "task5-research",
+      "task6-comparison",
+      "sharing",
+      "feedback"
+    ]
+  }
+}

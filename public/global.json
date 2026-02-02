@@ -49,9 +49,13 @@
     "test-parser-errors",
     "test-randomization",
     "test-skip-logic",
-    "test-step-logic"
+    "test-step-logic",
+    "mgc-user-test"
   ],
   "configs": {
+    "mgc-user-test": {
+      "path": "mgc-user-test/config.json"
+    },
     "tutorial": {
       "path": "tutorial/config.json"
     },
