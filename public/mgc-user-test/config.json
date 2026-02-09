@@ -28,13 +28,15 @@
     "introduction-mgc": {
       "type": "markdown",
       "path": "mgc-user-test/assets/introduction-mgc.md",
-      "response": []
+      "response": [],
+      "style": {"maxWidth": "125ch"}
     },
     "introduction-study": {
       "type": "markdown",
       "path": "mgc-user-test/assets/introduction-study.md",
       "response": [],
-      "previousButton": true
+      "previousButton": true,
+      "style": {"maxWidth": "125ch"}
     },
     "consent": {
       "type": "markdown",
@@ -52,7 +54,8 @@
           "placeholder": "Checkbox"
         }
       ],
-      "previousButton": true
+      "previousButton": true,
+      "style": {"maxWidth": "125ch"}
     },
     "training": {
       "type": "markdown",
@@ -64,7 +67,8 @@
           "location": "belowStimulus",
           "type": "shortText"
         }
-      ]
+      ],
+      "style": {"maxWidth": "125ch"}
     },
     "task1-navigation": {
       "type": "website",
@@ -193,7 +197,6 @@
       "task3-mapping",
       "task4-building",
       "task5-research",
-      "task6-comparison",
       "sharing",
       "feedback"
     ]
