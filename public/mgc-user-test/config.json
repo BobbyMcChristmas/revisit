@@ -163,7 +163,8 @@
           "prompt": "",
           "type": "shortText"
         }
-      ]
+      ],
+      "style": {"maxWidth": "125ch"}
     },
     "feedback": {
       "type": "markdown",
@@ -181,7 +182,8 @@
           "type": "shortText",
           "required": false
         }
-      ]
+      ],
+      "style": {"maxWidth": "125ch"}
     }
   },
   "sequence": {
