@@ -49,12 +49,89 @@
         },
         {
           "id": "age-response",
-          "prompt": "All participants of this study must be over the age of 18. By checking the box below, you acknowledge that you are over the age of 18.",
-          "type": "shortText",
-          "placeholder": "Checkbox"
+          "prompt": "All participants of this study must be at least 18 years old. By checking the box below, you acknowledge that you are at least 18.",
+          "type": "checkbox",
+          "options": [
+            "I am at least 18 years old"
+          ]
         }
       ],
       "previousButton": true,
+      "style": {"maxWidth": "125ch"}
+    },
+    "demographics": {
+      "type": "markdown",
+      "path": "mgc-user-test/assets/demographics.md",
+      "response": [
+        {
+          "id": "professional-response",
+          "prompt": "What is your current professional status?",
+          "location": "belowStimulus",
+          "type": "checkbox",
+          "options": [
+            "Undergraduate student",
+            "Graduate student (Master’s/PhD)",
+            "Postdoctoral researcher",
+            "Faculty (professor/lecturer)",
+            "Industry professional"
+          ],
+          "withOther": true,
+          "required": false
+        },
+        {
+          "id": "age-response",
+          "prompt": "What is your age range?",
+          "location": "belowStimulus",
+          "type": "radio",
+          "options": [
+            "18-24",
+            "25-34",
+            "35-44",
+            "45-54",
+            "55-64",
+            "65+"
+          ],
+          "required": false
+        },
+        {
+          "id": "country-response",
+          "prompt": "What is your country of work or study?",
+          "location": "belowStimulus",
+          "type": "shortText",
+          "required": false
+        },
+        {
+          "id": "discipline-response",
+          "prompt": "What is your primary discipline or area of focus?",
+          "location": "belowStimulus",
+          "type": "shortText",
+          "required": false
+        },
+        {
+          "id": "organization-response",
+          "prompt": "What type of organization are you primarily affiliated with?",
+          "location": "belowStimulus",
+          "type": "checkbox",
+          "options": [
+            "University/Academic Institution",
+            "Think Tank",
+            "Private Company",
+            "Startup",
+            "Government Agency",
+            "Nonprofit",
+            "Independent/Self-Employed"
+          ],
+          "withOther": true,
+          "required": false
+        },
+        {
+          "id": "origin-response",
+          "prompt": "Where did you find out about this project?",
+          "location": "belowStimulus",
+          "type": "shortText",
+          "required": false
+        }
+      ],
       "style": {"maxWidth": "125ch"}
     },
     "training": {
@@ -65,7 +142,10 @@
           "id": "training-response",
           "prompt": "Have you verbalized your thoughts?",
           "location": "belowStimulus",
-          "type": "shortText"
+          "type": "checkbox",
+          "options": [
+            "I have verbalized my thoughts"
+          ]
         }
       ],
       "style": {"maxWidth": "125ch"}
@@ -74,7 +154,7 @@
       "type": "website",
       "instruction": "Navigate to the Master Map",
       "instructionLocation": "aboveStimulus",
-      "path": "https://test.mapglobalchina.com/",
+      "path": "https://mapglobalchina.com/",
       "response": [],
       "previousButton": false,
       "recordAudio": true,
@@ -85,7 +165,7 @@
       "instruction": "Find the Relevant Information About the Team",
       "withSidebar": true,
       "nextButtonLocation": "sidebar",
-      "path": "https://test.mapglobalchina.com/",
+      "path": "https://mapglobalchina.com/",
       "response": [
         {
           "id": "about-response",
@@ -102,7 +182,7 @@
       "type": "website",
       "instruction": "Explore the Features of the Map and Verbalize any Thoughts You Have",
       "instructionLocation": "aboveStimulus",
-      "path": "https://test.mapglobalchina.com/maps/energy",
+      "path": "https://mapglobalchina.com/maps/energy",
       "response": [],
       "previousButton": true,
       "recordAudio": true,
@@ -112,7 +192,7 @@
       "type": "website",
       "instruction": "Create a Map for at Least 3 Countries in 2 Different Sectors",
       "instructionLocation": "aboveStimulus",
-      "path": "https://test.mapglobalchina.com/beta/build-your-map",
+      "path": "https://mapglobalchina.com/beta/build-your-map",
       "response": [],
       "previousButton": true,
       "recordAudio": true,
@@ -122,34 +202,8 @@
       "type": "website",
       "instruction": "Explore the Research Page",
       "instructionLocation": "aboveStimulus",
-      "path": "https://test.mapglobalchina.com/research",
+      "path": "https://mapglobalchina.com/research",
       "response": [],
-      "previousButton": true,
-      "recordAudio": true,
-      "recordScreen": true
-    },
-    "task6-comparison": {
-      "type": "image",
-      "instruction": "Choose Your Preferences",
-      "withSidebar": true,
-      "nextButtonLocation": "sidebar",
-      "path": "mgc-user-test/assets/pages.png",
-      "response": [
-        {
-          "id": "mode-response",
-          "prompt": "Do you prefer light or dark mode?",
-          "location": "sidebar",
-          "type": "shortText"
-        },
-        {
-          "id": "map-response",
-          "prompt": "Which of the maps (1-3, top to bottom) do you like the most?",
-          "type": "numerical",
-          "location": "sidebar",
-          "min": 1,
-          "max": 3
-        }
-      ],
       "previousButton": true,
       "recordAudio": true,
       "recordScreen": true
@@ -161,7 +215,11 @@
         {
           "id": "sharing-response",
           "prompt": "",
-          "type": "shortText"
+          "type": "checkbox",
+          "options": [
+            "Agree",
+            "Disagree"
+          ]
         }
       ],
       "style": {"maxWidth": "125ch"}
@@ -192,6 +250,7 @@
       "introduction-mgc",
       "introduction-study",
       "consent",
+      "demographics",
       "$screen-recording.co.screenRecordingPermission",
       "training",
       "task1-navigation",
